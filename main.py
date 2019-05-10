@@ -6,11 +6,12 @@ from services.facebook_service import post_image_on_facebook
 import os
 import json
 
-quote_and_author = get_some_quote()
+quote = get_some_quote()
 
-dowload_image_by_text(quote_and_author[1])
+dowload_image_by_text(quote.author)
 
-print_text_on_image_and_save(quote_and_author[0] + '\n\n' + quote_and_author[1])
+print_text_on_image_and_save(quote)
 
-post_image_on_facebook('Para refletir...')
+#post_image_on_facebook('Para refletir...')
 
+os.system("start new-picture.png")

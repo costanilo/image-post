@@ -3,11 +3,13 @@ from wand.color import Color
 from wand.drawing import Drawing
 from wand.image import Image
 
+from models.quote_model import Quote
+
 FACEBOOK_IMAGE_IDEAL_SIZE = 800
 
 def draw_rectangle(contxt, roi_width, roi_height, top, left, color):
     contxt.push()
-    contxt.stroke_color = color
+    # contxt.stroke_color = color
     contxt.fill_color = Color('rgba(153, 153, 153, 0.5)')
     contxt.rectangle(left=left, top=top, width=roi_width, height=roi_height)
     contxt.pop()
@@ -27,13 +29,13 @@ def word_wrap(image, ctx, text, roi_width, roi_height):
     def shrink_text():
         """Reduce point-size & restore original text"""
         ctx.font_size = ctx.font_size - 0.75
-        mutable_message = text
+        return text
 
     while ctx.font_size > 0 and iteration_attempts:
         iteration_attempts -= 1
         width, height = eval_metrics(mutable_message)
         if height > roi_height:
-            shrink_text()
+            mutable_message = shrink_text()
         elif width > roi_width:
             columns = len(mutable_message)
             while columns > 0:
@@ -43,30 +45,35 @@ def word_wrap(image, ctx, text, roi_width, roi_height):
                 if wrapped_width <= roi_width:
                     break
             if columns < 1:
-                shrink_text()
+                mutable_message = shrink_text()
         else:
             break
     if iteration_attempts < 1:
         raise RuntimeError("Unable to calculate word_wrap for " + text)
     return mutable_message
 
-def write_text(text):
+def write_text(quote):
     with Image(filename='new-picture.png') as img:
         with Drawing() as draw:
             color = Color('WHITE')
+            text_margin_top = 50
+            text_margin_left = 150
+            text_width = int(FACEBOOK_IMAGE_IDEAL_SIZE / 1.25)
+            text_heigth = int(FACEBOOK_IMAGE_IDEAL_SIZE / 1.15)
 
             draw_rectangle(draw, FACEBOOK_IMAGE_IDEAL_SIZE, FACEBOOK_IMAGE_IDEAL_SIZE, 0, 0, color)
             draw.fill_color = color
             draw.font_family = 'Arial'
-            draw.font_size = 80
+            draw.font_size = 56
+            draw.gravity = 'north'
 
-            text_margin_top = 200
-            text_margin_left = 150
-            text_width = FACEBOOK_IMAGE_IDEAL_SIZE - text_margin_left
-            text_heigth = FACEBOOK_IMAGE_IDEAL_SIZE - text_margin_top
-            aligned_text = word_wrap(img, draw, text, text_width, text_heigth)
+            aligned_text = word_wrap(img, draw, quote.text, text_width, text_heigth)
+            draw.text(0, text_margin_top, aligned_text)
 
-            draw.text(int(text_margin_left/2), text_margin_top, aligned_text)
+            draw.gravity = 'center'
+            draw.font_size = 30
+            draw.text(0, 300, quote.author)
+
             draw.draw(img)
             img.save(filename='new-picture.png')
 
@@ -76,6 +83,6 @@ def crop_image():
         img.crop(width=FACEBOOK_IMAGE_IDEAL_SIZE, height=FACEBOOK_IMAGE_IDEAL_SIZE, gravity='center')
         img.save(filename='new-picture.png')
 
-def print_text_on_image_and_save(text):
+def print_text_on_image_and_save(quote):
     crop_image()
-    write_text(text)
+    write_text(quote)
