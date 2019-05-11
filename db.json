@@ -1,0 +1,138 @@
+{
+    "used_quotes": [],
+    "font_configuration": [
+        {
+            "fontName": "Oswald-Regular",
+            "fontSizeLarge": 48,
+            "fontSizeSmall": 26,
+            "isUpper": true,
+            "fontStyle": "normal"
+        },
+        {
+            "fontName": "Oswald-Bold",
+            "fontSizeLarge": 48,
+            "fontSizeSmall": 26,
+            "isUpper": true,
+            "fontStyle": "normal"
+        },
+        {
+            "fontName": "Pacifico-Regular",
+            "fontSizeLarge": 42,
+            "fontSizeSmall": 24,
+            "isUpper": false,
+            "fontStyle": "normal"
+        },
+        {
+            "fontName": "Source Code Pro",
+            "fontSizeLarge": 42,
+            "fontSizeSmall": 24,
+            "isUpper": false,
+            "fontStyle": "normal"
+        },
+        {
+            "fontName": "Dancing Script",
+            "fontSizeLarge": 58,
+            "fontSizeSmall": 32,
+            "isUpper": false,
+            "fontStyle": "normal"
+        },
+        {
+            "fontName": "Courgette",
+            "fontSizeLarge": 48,
+            "fontSizeSmall": 26,
+            "isUpper": false,
+            "fontStyle": "normal"
+        },
+        {
+            "fontName": "Roboto Mono",
+            "fontSizeLarge": 48,
+            "fontSizeSmall": 26,
+            "isUpper": false,
+            "fontStyle": "normal"
+        },
+        {
+            "fontName": "PT Sans",
+            "fontSizeLarge": 48,
+            "fontSizeSmall": 26,
+            "isUpper": false,
+            "fontStyle": "normal"
+        },
+        {
+            "fontName": "Sofia",
+            "fontSizeLarge": 48,
+            "fontSizeSmall": 26,
+            "isUpper": false,
+            "fontStyle": "normal"
+        },
+        {
+            "fontName": "Fjalla One",
+            "fontSizeLarge": 48,
+            "fontSizeSmall": 26,
+            "isUpper": false,
+            "fontStyle": "normal"
+        },
+        {
+            "fontName": "Lobster",
+            "fontSizeLarge": 48,
+            "fontSizeSmall": 26,
+            "isUpper": false,
+            "fontStyle": "normal"
+        },
+        {
+            "fontName": "Michroma",
+            "fontSizeLarge": 48,
+            "fontSizeSmall": 26,
+            "isUpper": false,
+            "fontStyle": "normal"
+        },
+        {
+            "fontName": "Squada One",
+            "fontSizeLarge": 48,
+            "fontSizeSmall": 26,
+            "isUpper": false,
+            "fontStyle": "normal"
+        },
+        {
+            "fontName": "Secular One",
+            "fontSizeLarge": 48,
+            "fontSizeSmall": 26,
+            "isUpper": false,
+            "fontStyle": "normal"
+        },
+        {
+            "fontName": "Josefin Slab",
+            "fontSizeLarge": 48,
+            "fontSizeSmall": 26,
+            "isUpper": false,
+            "fontStyle": "normal"
+        },
+        {
+            "fontName": "IM Fell DW Pica",
+            "fontSizeLarge": 48,
+            "fontSizeSmall": 26,
+            "isUpper": false,
+            "fontStyle": "normal"
+        },
+        {
+            "fontName": "Sunshiney",
+            "fontSizeLarge": 48,
+            "fontSizeSmall": 26,
+            "isUpper": false,
+            "fontStyle": "normal"
+        },
+        {
+            "fontName": "Covered By Your Grace",
+            "fontSizeLarge": 48,
+            "fontSizeSmall": 26,
+            "isUpper": false,
+            "fontStyle": "normal"
+        },
+        {
+            "fontName": "Covered By Your Grace",
+            "fontSizeLarge": 48,
+            "fontSizeSmall": 26,
+            "isUpper": false,
+            "fontStyle": "normal"
+        }
+    ]
+}

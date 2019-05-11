@@ -6,12 +6,12 @@ from services.facebook_service import post_image_on_facebook
 import os
 import json
 
-for x in range(10):
+for x in range(3):
     quote = get_some_quote()
 
     #dowload_image_by_text(quote.author)
 
-    print_text_on_image_and_save(quote)
+    print_text_on_image_and_save(quote, x)
 
     #post_image_on_facebook('Para refletir...')
 
