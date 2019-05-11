@@ -5,7 +5,11 @@ from wand.image import Image
 
 from models.quote_model import Quote
 
+import random
+
 FACEBOOK_IMAGE_IDEAL_SIZE = 800
+FONT_FAMILIES = ['Pacifico', 'Source Code Pro', 'Dancing Script', 'Courgette']
+COLORS = ['orange', 'white', 'blue', 'green' ]
 
 def draw_rectangle(contxt, roi_width, roi_height, top, left, color):
     contxt.push()
@@ -55,24 +59,26 @@ def word_wrap(image, ctx, text, roi_width, roi_height):
 def write_text(quote):
     with Image(filename='new-picture.png') as img:
         with Drawing() as draw:
-            color = Color('WHITE')
+            color = Color(random.choice(COLORS))
             text_margin_top = 50
-            text_margin_left = 150
             text_width = int(FACEBOOK_IMAGE_IDEAL_SIZE / 1.25)
             text_heigth = int(FACEBOOK_IMAGE_IDEAL_SIZE / 1.15)
 
             draw_rectangle(draw, FACEBOOK_IMAGE_IDEAL_SIZE, FACEBOOK_IMAGE_IDEAL_SIZE, 0, 0, color)
             draw.fill_color = color
-            draw.font_family = 'Arial'
-            draw.font_size = 56
+            draw.font_family = random.choice(FONT_FAMILIES)
+            draw.font_size = 48
             draw.gravity = 'north'
 
             aligned_text = word_wrap(img, draw, quote.text, text_width, text_heigth)
             draw.text(0, text_margin_top, aligned_text)
 
-            draw.gravity = 'center'
-            draw.font_size = 30
-            draw.text(0, 300, quote.author)
+            mtrcs = draw.get_font_metrics(img, aligned_text, True)
+
+            y_position_author = int(mtrcs.text_height + text_margin_top)
+            draw.gravity = 'north'
+            draw.font_size = 32
+            draw.text(0, y_position_author, quote.author)
 
             draw.draw(img)
             img.save(filename='new-picture.png')
