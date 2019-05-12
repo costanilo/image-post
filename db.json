@@ -1,138 +1,153 @@
 {
-    "used_quotes": [],
-    "font_configuration": [
-        {
-            "fontName": "Oswald-Regular",
-            "fontSizeLarge": 48,
-            "fontSizeSmall": 26,
-            "isUpper": true,
-            "fontStyle": "normal"
-        },
-        {
-            "fontName": "Oswald-Bold",
-            "fontSizeLarge": 48,
-            "fontSizeSmall": 26,
-            "isUpper": true,
-            "fontStyle": "normal"
-        },
-        {
-            "fontName": "Pacifico-Regular",
-            "fontSizeLarge": 42,
-            "fontSizeSmall": 24,
-            "isUpper": false,
-            "fontStyle": "normal"
-        },
-        {
-            "fontName": "Source Code Pro",
-            "fontSizeLarge": 42,
-            "fontSizeSmall": 24,
-            "isUpper": false,
-            "fontStyle": "normal"
-        },
-        {
-            "fontName": "Dancing Script",
-            "fontSizeLarge": 58,
-            "fontSizeSmall": 32,
-            "isUpper": false,
-            "fontStyle": "normal"
-        },
-        {
-            "fontName": "Courgette",
-            "fontSizeLarge": 48,
-            "fontSizeSmall": 26,
-            "isUpper": false,
-            "fontStyle": "normal"
-        },
-        {
-            "fontName": "Roboto Mono",
-            "fontSizeLarge": 48,
-            "fontSizeSmall": 26,
-            "isUpper": false,
-            "fontStyle": "normal"
-        },
-        {
-            "fontName": "PT Sans",
-            "fontSizeLarge": 48,
-            "fontSizeSmall": 26,
-            "isUpper": false,
-            "fontStyle": "normal"
-        },
-        {
-            "fontName": "Sofia",
-            "fontSizeLarge": 48,
-            "fontSizeSmall": 26,
-            "isUpper": false,
-            "fontStyle": "normal"
-        },
-        {
-            "fontName": "Fjalla One",
-            "fontSizeLarge": 48,
-            "fontSizeSmall": 26,
-            "isUpper": false,
-            "fontStyle": "normal"
-        },
-        {
-            "fontName": "Lobster",
-            "fontSizeLarge": 48,
-            "fontSizeSmall": 26,
-            "isUpper": false,
-            "fontStyle": "normal"
-        },
-        {
-            "fontName": "Michroma",
-            "fontSizeLarge": 48,
-            "fontSizeSmall": 26,
-            "isUpper": false,
-            "fontStyle": "normal"
-        },
-        {
-            "fontName": "Squada One",
-            "fontSizeLarge": 48,
-            "fontSizeSmall": 26,
-            "isUpper": false,
-            "fontStyle": "normal"
-        },
-        {
-            "fontName": "Secular One",
-            "fontSizeLarge": 48,
-            "fontSizeSmall": 26,
-            "isUpper": false,
-            "fontStyle": "normal"
-        },
-        {
-            "fontName": "Josefin Slab",
-            "fontSizeLarge": 48,
-            "fontSizeSmall": 26,
-            "isUpper": false,
-            "fontStyle": "normal"
-        },
-        {
-            "fontName": "IM Fell DW Pica",
-            "fontSizeLarge": 48,
-            "fontSizeSmall": 26,
-            "isUpper": false,
-            "fontStyle": "normal"
-        },
-        {
-            "fontName": "Sunshiney",
-            "fontSizeLarge": 48,
-            "fontSizeSmall": 26,
-            "isUpper": false,
-            "fontStyle": "normal"
-        },
-        {
-            "fontName": "Covered By Your Grace",
-            "fontSizeLarge": 48,
-            "fontSizeSmall": 26,
-            "isUpper": false,
-            "fontStyle": "normal"
-        },
-        {
-            "fontName": "Covered By Your Grace",
-            "fontSizeLarge": 48,
-            "fontSizeSmall": 26,
-            "isUpper": false,
-            "fontStyle": "normal"
-        }
-    ]
+  "used_images": [
+    "https://cps-static.rovicorp.com/3/JPG_400/MI0003/146/MI0003146038.jpg?partner=allrovi.com",
+    "http://f.i.uol.com.br/folha/ilustrada/images/16358248.jpeg",
+    "https://www.bl.uk/britishlibrary/~/media/bl/global/dl%20shakespeare/authors/shakespeare-people-page.jpg?crop=1&cropX=16&cropY=12&cropW=1619&cropH=910&w=608&h=342&dispW=608&dispH=342",
+    "https://www.urbanarts.com.br/imagens/produtos/111155/Detalhes/paisagem-abstrata-8.jpg",
+    "https://cdn.pixabay.com/photo/2018/10/22/19/10/nature-3766066_960_720.jpg",
+    "https://www.ultimate-guitar.com/static/article/news/5/83505_ver1545166468.jpg",
+    "https://si.wsj.net/public/resources/images/BN-JU091_0810CL_H_20150810110605.jpg",
+    "https://static01.nyt.com/images/2018/03/28/books/review/28booklispector2/28booklispector2-articleLarge-v2.jpg?quality=75&auto=webp&disable=upscale",
+    "https://image.isu.pub/180403131635-785a56640de8d4bde8c0d8df70734f40/jpg/page_1_thumb_large.jpg",
+    "https://cdn.pensador.com/img/frase/ma/ri/maria_julia_paes_de_o_vo_valor_das_coisas_nao_esta_no_t_lz6lov5.jpg",
+    "https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2013/04/01/100607026-Shakespeare-courtesy-national-portrait-gallery.530x298.jpg?v=1364843744",
+    "http://3.bp.blogspot.com/-lGnY6VoF_Co/TdODJNWPXbI/AAAAAAAAALc/QmyY57JdXaU/s1600/Picture+8.png",
+    "https://i.ytimg.com/vi/vdB-8eLEW8g/hqdefault.jpg"
+  ],
+  "used_quotes": [
+    "Dif\u00edcil n\u00e3o \u00e9 lutar por aquilo que se quer, e sim desistir daquilo que se mais ama.\nEu desisti. Mas n\u00e3o pense que foi por n\u00e3o ter coragem de lutar, e sim por n\u00e3o ter mais condi\u00e7\u00f5es de sofrer.",
+    "Amo como ama o amor. N\u00e3o conhe\u00e7o nenhuma outra raz\u00e3o para amar sen\u00e3o amar. Que queres que te diga, al\u00e9m de que te amo, se o que quero dizer-te \u00e9 que te amo?",
+    "Nossas d\u00favidas s\u00e3o traidoras e nos fazem perder o que, com frequ\u00eancia, poder\u00edamos ganhar, por simples medo de arriscar.",
+    "Aprendi que n\u00e3o posso exigir o amor de ningu\u00e9m...\nPosso apenas dar boas raz\u00f5es para que gostem de mim...\nE ter paci\u00eancia para que a vida fa\u00e7a o resto...",
+    "A vida \u00e9 uma pe\u00e7a de teatro que n\u00e3o permite ensaios. Por isso, cante, chore, dance, ria e viva intensamente, antes que a cortina se feche e a pe\u00e7a termine sem aplausos.",
+    "\u00c0s vezes constru\u00edmos sonhos em cima de grandes pessoas... O tempo passa e descobrimos que grandes mesmo eram os sonhos e as pessoas pequenas demais para torn\u00e1-los reais!",
+    "At\u00e9 cortar os pr\u00f3prios defeitos pode ser perigoso. Nunca se sabe qual \u00e9 o defeito que sustenta nosso edif\u00edcio inteiro.",
+    "Renda-se, como eu me rendi. Mergulhe no que voc\u00ea n\u00e3o conhece como eu mergulhei. N\u00e3o se preocupe em entender, viver ultrapassa qualquer entendimento.",
+    "Os ventos que \u00e0s vezes\nLevam para longe o que amamos\nS\u00e3o os mesmos\nQue trazem algo mais para ser amado\n\nN\u00f3s n\u00e3o podemos chorar pelo\nQue nos foi tirado\nN\u00f3s n\u00e3o iremos... / N\u00f3s n\u00e3o iremos...\nN\u00f3s amaremos o que nos foi dado \nPois tudo que \u00e9 realmente nosso...n\u00e3o ir\u00e1 embora...",
+    "O valor das coisas n\u00e3o est\u00e1 no tempo que elas duram, mas na intensidade com que acontecem. Por isso existem momentos inesquec\u00edveis, coisas inexplic\u00e1veis e pessoas incompar\u00e1veis.",
+    "Todo mundo \u00e9 capaz de dominar uma dor, exceto quem a sente.",
+    "A vantagem de ter p\u00e9ssima mem\u00f3ria \u00e9 divertir-se muitas vezes com as mesmas coisas boas como se fosse a primeira vez.",
+    "N\u00e3o viva para que a sua presen\u00e7a seja notada, mas para que a sua falta seja sentida."
+  ],
+  "font_configuration": [
+    {
+      "fontName": "Oswald-Regular",
+      "fontSizeLarge": 48,
+      "fontSizeSmall": 26,
+      "isUpper": true,
+      "fontStyle": "normal"
+    },
+    {
+      "fontName": "Oswald-Bold",
+      "fontSizeLarge": 48,
+      "fontSizeSmall": 26,
+      "isUpper": true,
+      "fontStyle": "normal"
+    },
+    {
+      "fontName": "Pacifico-Regular",
+      "fontSizeLarge": 42,
+      "fontSizeSmall": 24,
+      "isUpper": false,
+      "fontStyle": "normal"
+    },
+    {
+      "fontName": "Source-Code-Pro",
+      "fontSizeLarge": 42,
+      "fontSizeSmall": 24,
+      "isUpper": false,
+      "fontStyle": "normal"
+    },
+    {
+      "fontName": "Dancing-Script-Regular",
+      "fontSizeLarge": 58,
+      "fontSizeSmall": 32,
+      "isUpper": false,
+      "fontStyle": "normal"
+    },
+    {
+      "fontName": "Courgette-Regular",
+      "fontSizeLarge": 48,
+      "fontSizeSmall": 26,
+      "isUpper": false,
+      "fontStyle": "normal"
+    },
+    {
+      "fontName": "Roboto-Mono",
+      "fontSizeLarge": 48,
+      "fontSizeSmall": 26,
+      "isUpper": false,
+      "fontStyle": "normal"
+    },
+    {
+      "fontName": "PT-Sans",
+      "fontSizeLarge": 48,
+      "fontSizeSmall": 26,
+      "isUpper": false,
+      "fontStyle": "normal"
+    },
+    {
+      "fontName": "Sofia",
+      "fontSizeLarge": 48,
+      "fontSizeSmall": 26,
+      "isUpper": false,
+      "fontStyle": "normal"
+    },
+    {
+      "fontName": "Fjalla-One",
+      "fontSizeLarge": 48,
+      "fontSizeSmall": 26,
+      "isUpper": false,
+      "fontStyle": "normal"
+    },
+    {
+      "fontName": "Lobster-Regular",
+      "fontSizeLarge": 48,
+      "fontSizeSmall": 26,
+      "isUpper": false,
+      "fontStyle": "normal"
+    },
+    {
+      "fontName": "Michroma",
+      "fontSizeLarge": 48,
+      "fontSizeSmall": 26,
+      "isUpper": false,
+      "fontStyle": "normal"
+    },
+    {
+      "fontName": "Squada-One",
+      "fontSizeLarge": 48,
+      "fontSizeSmall": 26,
+      "isUpper": false,
+      "fontStyle": "normal"
+    },
+    {
+      "fontName": "SecularOne-Regular",
+      "fontSizeLarge": 48,
+      "fontSizeSmall": 26,
+      "isUpper": false,
+      "fontStyle": "normal"
+    },
+    {
+      "fontName": "Josefin-Slab-Regular",
+      "fontSizeLarge": 48,
+      "fontSizeSmall": 26,
+      "isUpper": false,
+      "fontStyle": "normal"
+    },
+    {
+      "fontName": "IM-FELL-DW-Pica-Roman",
+      "fontSizeLarge": 48,
+      "fontSizeSmall": 26,
+      "isUpper": false,
+      "fontStyle": "normal"
+    },
+    {
+      "fontName": "Covered-By-Your-Grace",
+      "fontSizeLarge": 48,
+      "fontSizeSmall": 26,
+      "isUpper": false,
+      "fontStyle": "normal"
+    }
+  ]
 }

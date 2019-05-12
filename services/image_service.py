@@ -64,7 +64,7 @@ def write_text(quote, x):
     with Image(filename='new-picture.png') as img:
         with Drawing() as draw:
             color = Color(random.choice(COLORS))
-            text_margin_top = 50
+            text_margin_top = 0
             text_width = int(FACEBOOK_IMAGE_IDEAL_SIZE / 1.25)
             text_heigth = int(FACEBOOK_IMAGE_IDEAL_SIZE / 1.15)
 
@@ -73,7 +73,7 @@ def write_text(quote, x):
             draw.font = font_config['fontName']
             draw.font_size = font_config['fontSizeLarge']
             draw.font_style = font_config['fontStyle']
-            draw.gravity = 'north'
+            draw.gravity = 'center'
 
             text = quote.text.upper() if font_config['isUpper'] else quote.text
 
@@ -82,13 +82,13 @@ def write_text(quote, x):
 
             mtrcs = draw.get_font_metrics(img, aligned_text, True)
 
-            y_position_author = int(mtrcs.text_height + text_margin_top)
-            draw.gravity = 'north'
+            y_position_author = int(10 + (mtrcs.text_height / 2)) #+ text_margin_top)
+            draw.gravity = 'center'
             draw.font_size = font_config['fontSizeSmall']
-            draw.text(0, y_position_author, font_config['fontName'])
+            draw.text(0, y_position_author, quote.author + "(" + font_config['fontName'] + ")")
 
             draw.draw(img)
-            img.save(filename='new-picture.png')
+            img.save(filename='new-picture-' + str(x) + '.png')
 
 def crop_image():
     with Image(filename='base-picture.png') as img:

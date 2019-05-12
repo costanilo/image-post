@@ -13,7 +13,13 @@ import os
 import json
 
 
-def get_some_quote():
+def get_some_quote(is_mock):
+    if is_mock:
+        mock_quote = Quote()
+        mock_quote.author = "Eric Clapton"
+        mock_quote.text = "Dif\u00edcil n\u00e3o \u00e9 lutar por aquilo que se quer, e sim desistir daquilo que se mais ama.\nEu desisti. Mas n\u00e3o pense que foi por n\u00e3o ter coragem de lutar, e sim por n\u00e3o ter mais condi\u00e7\u00f5es de sofrer."
+        return mock_quote
+
     url = get_config_by_key('quotesSource')
 
     html_page = get_html_page(url)
@@ -27,11 +33,11 @@ def get_some_quote():
     used_quotes = get_all_used_quotes()
 
     for quote in quotes:
-        if quote.get_text() not in used_quotes and len(quote.get_text()) <= 300:
+        if quote.get_text() not in used_quotes and len(quote.get_text(strip=True)) <= 240:
             selected_quote.text = quote.get_text()
-            selected_quote.author = authors[quotes.index(quote)].get_text()
+            selected_quote.author = authors[quotes.index(quote)].get_text(strip=True)
             break
 
-    #set_new_quote(selected_quote.text)
+    set_new_quote(selected_quote.text)
 
     return selected_quote
