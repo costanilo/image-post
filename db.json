@@ -23,72 +23,72 @@
     "\u00c0s vezes constru\u00edmos sonhos em cima de grandes pessoas... O tempo passa e descobrimos que grandes mesmo eram os sonhos e as pessoas pequenas demais para torn\u00e1-los reais!",
     "At\u00e9 cortar os pr\u00f3prios defeitos pode ser perigoso. Nunca se sabe qual \u00e9 o defeito que sustenta nosso edif\u00edcio inteiro.",
     "Renda-se, como eu me rendi. Mergulhe no que voc\u00ea n\u00e3o conhece como eu mergulhei. N\u00e3o se preocupe em entender, viver ultrapassa qualquer entendimento.",
-    "Os ventos que \u00e0s vezes\nLevam para longe o que amamos\nS\u00e3o os mesmos\nQue trazem algo mais para ser amado\n\nN\u00f3s n\u00e3o podemos chorar pelo\nQue nos foi tirado\nN\u00f3s n\u00e3o iremos... / N\u00f3s n\u00e3o iremos...\nN\u00f3s amaremos o que nos foi dado \nPois tudo que \u00e9 realmente nosso...n\u00e3o ir\u00e1 embora...",
     "O valor das coisas n\u00e3o est\u00e1 no tempo que elas duram, mas na intensidade com que acontecem. Por isso existem momentos inesquec\u00edveis, coisas inexplic\u00e1veis e pessoas incompar\u00e1veis.",
     "Todo mundo \u00e9 capaz de dominar uma dor, exceto quem a sente.",
     "A vantagem de ter p\u00e9ssima mem\u00f3ria \u00e9 divertir-se muitas vezes com as mesmas coisas boas como se fosse a primeira vez.",
-    "N\u00e3o viva para que a sua presen\u00e7a seja notada, mas para que a sua falta seja sentida."
+    "N\u00e3o viva para que a sua presen\u00e7a seja notada, mas para que a sua falta seja sentida.",
+    "O tempo \u00e9 muito lento para os que esperam\nMuito r\u00e1pido para os que t\u00eam medo\nMuito longo para os que lamentam\nMuito curto para os que festejam\nMas, para os que amam, o tempo \u00e9 eterno."
   ],
   "font_configuration": [
     {
       "fontName": "Oswald-Regular",
-      "fontSizeLarge": 48,
-      "fontSizeSmall": 26,
+      "fontSizeLarge": 40,
+      "fontSizeSmall": 24,
       "isUpper": true,
       "fontStyle": "normal"
     },
     {
       "fontName": "Oswald-Bold",
-      "fontSizeLarge": 48,
-      "fontSizeSmall": 26,
+      "fontSizeLarge": 40,
+      "fontSizeSmall": 24,
       "isUpper": true,
       "fontStyle": "normal"
     },
     {
       "fontName": "Pacifico-Regular",
-      "fontSizeLarge": 42,
+      "fontSizeLarge": 40,
       "fontSizeSmall": 24,
       "isUpper": false,
       "fontStyle": "normal"
     },
     {
       "fontName": "Source-Code-Pro",
-      "fontSizeLarge": 42,
+      "fontSizeLarge": 40,
       "fontSizeSmall": 24,
       "isUpper": false,
       "fontStyle": "normal"
     },
     {
       "fontName": "Dancing-Script-Regular",
-      "fontSizeLarge": 58,
+      "fontSizeLarge": 52,
       "fontSizeSmall": 32,
       "isUpper": false,
       "fontStyle": "normal"
     },
     {
       "fontName": "Courgette-Regular",
-      "fontSizeLarge": 48,
-      "fontSizeSmall": 26,
+      "fontSizeLarge": 42,
+      "fontSizeSmall": 22,
       "isUpper": false,
       "fontStyle": "normal"
     },
     {
       "fontName": "Roboto-Mono",
-      "fontSizeLarge": 48,
-      "fontSizeSmall": 26,
+      "fontSizeLarge": 36,
+      "fontSizeSmall": 22,
       "isUpper": false,
       "fontStyle": "normal"
     },
     {
       "fontName": "PT-Sans",
-      "fontSizeLarge": 48,
-      "fontSizeSmall": 26,
+      "fontSizeLarge": 46,
+      "fontSizeSmall": 24,
       "isUpper": false,
       "fontStyle": "normal"
     },
     {
       "fontName": "Sofia",
-      "fontSizeLarge": 48,
+      "fontSizeLarge": 42,
       "fontSizeSmall": 26,
       "isUpper": false,
       "fontStyle": "normal"
@@ -103,35 +103,35 @@
     {
       "fontName": "Lobster-Regular",
       "fontSizeLarge": 48,
-      "fontSizeSmall": 26,
+      "fontSizeSmall": 30,
       "isUpper": false,
       "fontStyle": "normal"
     },
     {
       "fontName": "Michroma",
-      "fontSizeLarge": 48,
-      "fontSizeSmall": 26,
+      "fontSizeLarge": 36,
+      "fontSizeSmall": 20,
       "isUpper": false,
       "fontStyle": "normal"
     },
     {
       "fontName": "Squada-One",
-      "fontSizeLarge": 48,
-      "fontSizeSmall": 26,
+      "fontSizeLarge": 50,
+      "fontSizeSmall": 30,
       "isUpper": false,
       "fontStyle": "normal"
     },
     {
       "fontName": "SecularOne-Regular",
-      "fontSizeLarge": 48,
-      "fontSizeSmall": 26,
+      "fontSizeLarge": 40,
+      "fontSizeSmall": 24,
       "isUpper": false,
       "fontStyle": "normal"
     },
     {
       "fontName": "Josefin-Slab-Regular",
       "fontSizeLarge": 48,
-      "fontSizeSmall": 26,
+      "fontSizeSmall": 28,
       "isUpper": false,
       "fontStyle": "normal"
     },
@@ -145,7 +145,7 @@
     {
       "fontName": "Covered-By-Your-Grace",
       "fontSizeLarge": 48,
-      "fontSizeSmall": 26,
+      "fontSizeSmall": 30,
       "isUpper": false,
       "fontStyle": "normal"
     }

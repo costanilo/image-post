@@ -82,7 +82,7 @@ def write_text(quote, x):
 
             mtrcs = draw.get_font_metrics(img, aligned_text, True)
 
-            y_position_author = int(10 + (mtrcs.text_height / 2)) #+ text_margin_top)
+            y_position_author = int(15 + (mtrcs.text_height / 2)) #+ text_margin_top)
             draw.gravity = 'center'
             draw.font_size = font_config['fontSizeSmall']
             draw.text(0, y_position_author, quote.author + "(" + font_config['fontName'] + ")")
