@@ -12,7 +12,6 @@ import re
 import os
 import json
 
-
 def get_some_quote(is_mock):
     if is_mock:
         mock_quote = Quote()
@@ -22,21 +21,33 @@ def get_some_quote(is_mock):
 
     url = get_config_by_key('quotesSource')
 
-    html_page = get_html_page(url)
-    soup = BeautifulSoup(html_page, "lxml")
-
-    quotes = soup.findAll("p", {"class": "frase"})
-    authors = soup.findAll("span", {"class": "autor"})
-
     selected_quote = Quote()
 
-    used_quotes = get_all_used_quotes()
+    not_used_routes = get_config_by_key('quotesRoutes')
 
-    for quote in quotes:
-        if quote.get_text() not in used_quotes and len(quote.get_text(strip=True)) <= 240:
-            selected_quote.text = quote.get_text()
-            selected_quote.author = authors[quotes.index(quote)].get_text(strip=True)
-            break
+    while selected_quote.text == '' and len(not_used_routes) > 0:
+        index = 0
+        current_route = not_used_routes.pop(index)
+
+        html_page = get_html_page(url + current_route)
+        soup = BeautifulSoup(html_page, "lxml")
+
+        quotes = soup.findAll("p", {"class": "frase"})
+        authors = soup.findAll("span", {"class": "autor"})
+
+        used_quotes = get_all_used_quotes()
+
+        for quote in quotes:
+            if quote.get_text() not in used_quotes and len(quote.get_text(strip=True)) <= 240:
+                selected_quote.text = quote.get_text()
+                selected_quote.author = authors[quotes.index(
+                    quote)].get_text(strip=True)
+                break
+
+        index += 1
+
+    if (selected_quote.text == ''):
+        raise Exception('Não foi possível encontrar nenhuma frase nas rotas configuradas')
 
     set_new_quote(selected_quote.text)
 

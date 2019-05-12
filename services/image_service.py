@@ -59,8 +59,7 @@ def word_wrap(image, ctx, text, roi_width, roi_height):
 
 def write_text(quote, x):
     #font_config = random.choice(get_font_configurations())
-    font_config = get_font_configurations()[x]
-
+    font_config = get_font_configurations()[2]
     with Image(filename='new-picture.png') as img:
         with Drawing() as draw:
             color = Color(random.choice(COLORS))
@@ -85,10 +84,12 @@ def write_text(quote, x):
             y_position_author = int(15 + (mtrcs.text_height / 2)) #+ text_margin_top)
             draw.gravity = 'center'
             draw.font_size = font_config['fontSizeSmall']
-            draw.text(0, y_position_author, quote.author + "(" + font_config['fontName'] + ")")
+            #draw.text(0, y_position_author, quote.author + "(" + font_config['fontName'] + ")")
+            draw.text(0, y_position_author, quote.author)
 
             draw.draw(img)
-            img.save(filename='new-picture-' + str(x) + '.png')
+            # img.save(filename='new-picture-' + str(x) + '.png')
+            img.save(filename='new-picture.png')
 
 def crop_image():
     with Image(filename='base-picture.png') as img:

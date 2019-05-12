@@ -4,4 +4,5 @@ class Quote:
         self.author = author
 
     def __init__(self):
-        pass
+        self.text = ''
+        self.author = ''
