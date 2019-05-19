@@ -1,19 +1,22 @@
 from services.quotes_service import get_some_quote
 from services.google_service import dowload_image_by_text
-from services.image_service import print_text_on_image_and_save
+from services.image_service import create_image_quote
 from services.facebook_service import post_image_on_facebook
 
 import os
 import json
+import time
 
-# for x in range(19):
-#     print(x)
-quote = get_some_quote(False)
+for x in range(20):
+    print(x)
+    quote = get_some_quote(False)
 
-#dowload_image_by_text(quote.author)
+    dowload_image_by_text(quote.author)
 
-print_text_on_image_and_save(quote, x=1)
+    create_image_quote(quote)
 
-post_image_on_facebook('Para refletir...')
+    post_image_on_facebook('Siga: @nessasfrasesdavida')
 
-#os.system("start new-picture-" + str(x) + ".png")
+    time.sleep(5)
+
+    # os.system("start new-picture-" + str(1) + ".png")

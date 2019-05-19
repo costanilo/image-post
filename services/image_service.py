@@ -7,20 +7,18 @@ from shared.database_service import get_font_configurations
 from models.quote_model import Quote
 
 import random
-import os
 
 FACEBOOK_IMAGE_IDEAL_SIZE = 800
-FONT_FAMILIES = ['Pacifico', 'Source Code Pro', 'Dancing Script', 'Courgette']
-COLORS = ['white']#['orange', 'white', 'blue', 'green' ]
-
-def draw_rectangle(contxt, roi_width, roi_height, top, left, color):
-    contxt.push()
-    contxt.fill_color = Color('rgba(153, 153, 153, 0.5)')
-    contxt.rectangle(left=left, top=top, width=roi_width, height=roi_height)
-    contxt.pop()
 
 
-def word_wrap(image, ctx, text, roi_width, roi_height):
+def draw_rectangle(context, roi_width, roi_height, top, left):
+    context.push()
+    context.fill_color = Color('rgba(153, 153, 153, 0.5)')
+    context.rectangle(left=left, top=top, width=roi_width, height=roi_height)
+    context.pop()
+
+
+def word_wrap(image, ctx, text, max_width, max_height):
     """Break long text to multiple lines, and reduce point size
     until all text fits within a bounding box."""
     mutable_message = text
@@ -29,7 +27,7 @@ def word_wrap(image, ctx, text, roi_width, roi_height):
     def eval_metrics(txt):
         """Quick helper function to calculate width/height of text."""
         metrics = ctx.get_font_metrics(image, txt, True)
-        return (metrics.text_width, metrics.text_height)
+        return metrics.text_width, metrics.text_height
 
     def shrink_text():
         """Reduce point-size & restore original text"""
@@ -39,15 +37,15 @@ def word_wrap(image, ctx, text, roi_width, roi_height):
     while ctx.font_size > 0 and iteration_attempts:
         iteration_attempts -= 1
         width, height = eval_metrics(mutable_message)
-        if height > roi_height:
+        if height > max_height:
             mutable_message = shrink_text()
-        elif width > roi_width:
+        elif width > max_width:
             columns = len(mutable_message)
             while columns > 0:
                 columns -= 1
                 mutable_message = '\n'.join(wrap(mutable_message, columns))
                 wrapped_width, _ = eval_metrics(mutable_message)
-                if wrapped_width <= roi_width:
+                if wrapped_width <= max_width:
                     break
             if columns < 1:
                 mutable_message = shrink_text()
@@ -57,39 +55,68 @@ def word_wrap(image, ctx, text, roi_width, roi_height):
         raise RuntimeError("Unable to calculate word_wrap for " + text)
     return mutable_message
 
-def write_text(quote, x):
-    #font_config = random.choice(get_font_configurations())
-    font_config = get_font_configurations()[2]
+
+def write_text(quote):
+    font_config = random.choice(get_font_configurations())
+    # font_config = get_font_configurations()[2]
+
     with Image(filename='new-picture.png') as img:
         with Drawing() as draw:
-            color = Color(random.choice(COLORS))
-            text_margin_top = 0
-            text_width = int(FACEBOOK_IMAGE_IDEAL_SIZE / 1.25)
-            text_heigth = int(FACEBOOK_IMAGE_IDEAL_SIZE / 1.15)
+            basic_font_configuration(draw, font_config)
 
-            draw_rectangle(draw, FACEBOOK_IMAGE_IDEAL_SIZE, FACEBOOK_IMAGE_IDEAL_SIZE, 0, 0, color)
-            draw.fill_color = color
-            draw.font = font_config['fontName']
-            draw.font_size = font_config['fontSizeLarge']
-            draw.font_style = font_config['fontStyle']
-            draw.gravity = 'center'
+            formatted_text = format_quote(draw, font_config, img, quote.text)
+            metrics = draw.get_font_metrics(img, formatted_text, True)
 
-            text = quote.text.upper() if font_config['isUpper'] else quote.text
-
-            aligned_text = word_wrap(img, draw, text, text_width, text_heigth)
-            draw.text(0, text_margin_top, aligned_text)
-
-            mtrcs = draw.get_font_metrics(img, aligned_text, True)
-
-            y_position_author = int(15 + (mtrcs.text_height / 2)) #+ text_margin_top)
-            draw.gravity = 'center'
-            draw.font_size = font_config['fontSizeSmall']
-            #draw.text(0, y_position_author, quote.author + "(" + font_config['fontName'] + ")")
-            draw.text(0, y_position_author, quote.author)
+            draw_rectangle(draw, FACEBOOK_IMAGE_IDEAL_SIZE, FACEBOOK_IMAGE_IDEAL_SIZE, 0, 0)
+            draw_quote(draw, formatted_text)
+            draw_author(draw, font_config, quote.author, metrics)
+            draw_logo(draw)
+            draw_page_info(draw)
 
             draw.draw(img)
-            # img.save(filename='new-picture-' + str(x) + '.png')
             img.save(filename='new-picture.png')
+
+
+def draw_logo(draw):
+    draw.gravity = 'north'
+    icon = Image(filename='assets/icon.png')
+    draw.composite(operator='over', left=0, top=50, width=60, height=60, image=icon)
+
+
+def draw_author(draw, font_config, author, metrics):
+    vertical_position = int((metrics.text_height / 1.82))
+    draw.font_size = font_config['fontSizeSmall']
+    draw.text(0, vertical_position, author)
+
+
+def draw_page_info(draw):
+    draw.font = 'Fjalla-One'
+    draw.font_style = 'normal'
+    draw.font_size = 21
+    vertical_position = 350
+    draw.gravity = 'center'
+    draw.text(0, vertical_position, 'Siga:\n@NessasFrasesDaVida')
+
+
+def format_quote(draw, font_config, img, quote):
+    text = quote.upper() if font_config['isUpper'] else quote
+    text_width = int(FACEBOOK_IMAGE_IDEAL_SIZE / 1.25)
+    text_height = int(FACEBOOK_IMAGE_IDEAL_SIZE / 1.15)
+    wrapped_text = word_wrap(img, draw, text, text_width, text_height)
+    return wrapped_text
+
+
+def draw_quote(draw, quote):
+    draw.gravity = 'center'
+    draw.text(0, 0, quote)
+
+
+def basic_font_configuration(draw, font_config):
+    draw.fill_color = Color('white')
+    draw.font = font_config['fontName']
+    draw.font_style = font_config['fontStyle']
+    draw.font_size = font_config['fontSizeLarge']
+
 
 def crop_image():
     with Image(filename='base-picture.png') as img:
@@ -97,6 +124,7 @@ def crop_image():
         img.crop(width=FACEBOOK_IMAGE_IDEAL_SIZE, height=FACEBOOK_IMAGE_IDEAL_SIZE, gravity='center')
         img.save(filename='new-picture.png')
 
-def print_text_on_image_and_save(quote, x):
+
+def create_image_quote(quote):
     crop_image()
-    write_text(quote, x)
+    write_text(quote)

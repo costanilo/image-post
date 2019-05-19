@@ -12,11 +12,12 @@ import re
 import os
 import json
 
+
 def get_some_quote(is_mock):
     if is_mock:
         mock_quote = Quote()
-        mock_quote.author = "Eric Clapton"
-        mock_quote.text = "Dif\u00edcil n\u00e3o \u00e9 lutar por aquilo que se quer, e sim desistir daquilo que se mais ama.\nEu desisti. Mas n\u00e3o pense que foi por n\u00e3o ter coragem de lutar, e sim por n\u00e3o ter mais condi\u00e7\u00f5es de sofrer."
+        mock_quote.author = "Augusto Branco"
+        mock_quote.text = "A maior covardia de um homem é despertar o amor de uma mulher sem ter a intenção de amá-la."
         return mock_quote
 
     url = get_config_by_key('quotesSource')
@@ -46,7 +47,7 @@ def get_some_quote(is_mock):
 
         index += 1
 
-    if (selected_quote.text == ''):
+    if selected_quote.text == '':
         raise Exception('Não foi possível encontrar nenhuma frase nas rotas configuradas')
 
     set_new_quote(selected_quote.text)
