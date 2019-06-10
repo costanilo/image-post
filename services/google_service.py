@@ -4,9 +4,33 @@ from shared.proxy_service import download_link
 from shared.database_service import get_all_used_images, set_used_image
 
 import pprint
-import json
 
-def dowload_image_by_text(text):
+# Imports the Google Cloud client library
+from google.cloud import language
+from google.cloud.language import enums
+from google.cloud.language import types
+
+
+def analyze_text():
+    # Instantiates a client
+    client = language.LanguageServiceClient()
+
+    # The text to analyze
+    text = u'Everyone is capable of mastering a pain except who feels it.'
+    document = types.Document(
+        content=text,
+        type=enums.Document.Type.PLAIN_TEXT,
+        )
+
+    # Detects the sentiment of the text
+    sentiment = client.analyze_entities(document=document)
+
+    pprint.pprint(sentiment)
+    # print('Text: {}'.format(text))
+    # print('Sentiment: {}, {}'.format(sentiment.score, sentiment.magnitude))
+
+
+def download_image_by_text(text):
     api_key = get_config_by_key('apiKey')
     engine_id = get_config_by_key('searchEngineId')
     service = build("customsearch", "v1", developerKey=api_key)
