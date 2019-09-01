@@ -31,7 +31,7 @@ def get_some_quote(is_mock):
         current_route = not_used_routes.pop(index)
 
         html_page = get_html_page(url + current_route)
-        soup = BeautifulSoup(html_page, "lxml")
+        soup = BeautifulSoup(html_page, "html.parser")
 
         quotes = soup.findAll("p", {"class": "frase"})
         authors = soup.findAll("span", {"class": "autor"})
