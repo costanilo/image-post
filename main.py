@@ -9,6 +9,7 @@ import time
 
 
 def publish_process():
+    print("Starting process")
     # quote = get_some_quote(False)
     # download_image_by_text(quote.author)
     # create_image_quote(quote)
@@ -16,3 +17,5 @@ def publish_process():
     # time.sleep(5)
     #
     # os.system("start new-picture-" + str(1) + ".png")
+
+

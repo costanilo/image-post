@@ -6,7 +6,10 @@ import requests
 
 
 def post_image_on_facebook():
-    graph = facebook.GraphAPI(get_config_by_key('facebookPageToken'))
+    token = get_config_by_key('facebookPageToken')
+    print("Token {0} is {1}".format('facebookPageToken', token))
+    graph = facebook.GraphAPI(token)
+
     graph.put_photo(image=open('new-picture.png', 'rb'), message="")
 
 
