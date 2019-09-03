@@ -7,17 +7,12 @@ import os
 import json
 import time
 
-for x in range(1):
-    # log_in()
-    # print(x)
-    # quote = get_some_quote(False)
-    #
-    # download_image_by_text(quote.author)
-    #
-    # create_image_quote(quote)
 
+def publish_process():
+    # quote = get_some_quote(False)
+    # download_image_by_text(quote.author)
+    # create_image_quote(quote)
     post_image_on_facebook()
-    #
     # time.sleep(5)
     #
     # os.system("start new-picture-" + str(1) + ".png")
