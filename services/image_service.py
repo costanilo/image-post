@@ -12,6 +12,7 @@ FACEBOOK_IMAGE_IDEAL_SIZE = 800
 
 
 def draw_rectangle(context, roi_width, roi_height, top, left):
+    print("Drawing Background...")
     context.push()
     context.fill_color = Color('rgba(153, 153, 153, 0.5)')
     context.rectangle(left=left, top=top, width=roi_width, height=roi_height)
@@ -19,6 +20,7 @@ def draw_rectangle(context, roi_width, roi_height, top, left):
 
 
 def word_wrap(image, ctx, text, max_width, max_height):
+    print("Wrapping Text...")
     """Break long text to multiple lines, and reduce point size
     until all text fits within a bounding box."""
     mutable_message = text
@@ -56,7 +58,9 @@ def word_wrap(image, ctx, text, max_width, max_height):
     return mutable_message
 
 
-def write_text(quote):
+def create_image_quote(quote):
+    print("Processing Image...")
+    crop_image()
     font_config = random.choice(get_font_configurations())
     # font_config = get_font_configurations()[2]
 
@@ -75,30 +79,35 @@ def write_text(quote):
 
             draw.draw(img)
             img.save(filename='new-picture.png')
+    print("Image Edited!")
 
 
 def draw_logo(draw):
+    print("Drawing Logo...")
     draw.gravity = 'north'
     icon = Image(filename='assets/icon.png')
     draw.composite(operator='over', left=0, top=50, width=60, height=60, image=icon)
 
 
 def draw_author(draw, font_config, author, metrics):
+    print("Drawing Author...")
     vertical_position = int((metrics.text_height / 1.82))
     draw.font_size = font_config['fontSizeSmall']
     draw.text(0, vertical_position, author)
 
 
 def draw_page_info(draw):
+    print("Drawing Footer...")
     draw.font = 'Fjalla-One'
     draw.font_style = 'normal'
     draw.font_size = 21
     vertical_position = 350
     draw.gravity = 'center'
-    draw.text(0, vertical_position, 'Siga:\n@NessasFrasesDaVida')
+    draw.text(0, vertical_position, 'Siga\n@NessasFrasesDaVida')
 
 
 def format_quote(draw, font_config, img, quote):
+    print("Formatting Text...")
     text = quote.upper() if font_config['isUpper'] else quote
     text_width = int(FACEBOOK_IMAGE_IDEAL_SIZE / 1.25)
     text_height = int(FACEBOOK_IMAGE_IDEAL_SIZE / 1.15)
@@ -107,11 +116,13 @@ def format_quote(draw, font_config, img, quote):
 
 
 def draw_quote(draw, quote):
+    print("Drawing Text...")
     draw.gravity = 'center'
     draw.text(0, 0, quote)
 
 
 def basic_font_configuration(draw, font_config):
+    print("Setting Fonts...")
     draw.fill_color = Color('white')
     draw.font = font_config['fontName']
     draw.font_style = font_config['fontStyle']
@@ -119,12 +130,9 @@ def basic_font_configuration(draw, font_config):
 
 
 def crop_image():
+    print("Cutting Image...")
     with Image(filename='base-picture.png') as img:
         img.transform(resize='800x800^')
         img.crop(width=FACEBOOK_IMAGE_IDEAL_SIZE, height=FACEBOOK_IMAGE_IDEAL_SIZE, gravity='center')
         img.save(filename='new-picture.png')
 
-
-def create_image_quote(quote):
-    crop_image()
-    write_text(quote)

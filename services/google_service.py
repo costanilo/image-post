@@ -31,6 +31,7 @@ def analyze_text():
 
 
 def download_image_by_text(text):
+    print("Searching for images...")
     api_key = get_config_by_key('apiKey')
     engine_id = get_config_by_key('searchEngineId')
     service = build("customsearch", "v1", developerKey=api_key)
@@ -50,11 +51,13 @@ def download_image_by_text(text):
     # with open('images.json', 'w') as outfile:  
     #     json.dump(res, outfile)
 
-    image_links = res['items'] #[0]['link']
+    image_links = res['items']
     used_links = get_all_used_images()
 
+    print("Choosing Image...")
     for image in image_links:
         if image['link'] not in used_links:
             download_link(image['link'], 'base-picture.png')
             set_used_image(image['link'])
+            print("Image Saved!...")
             break

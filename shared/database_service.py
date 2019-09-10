@@ -44,3 +44,17 @@ def get_all_used_images():
     with open('db.json', "r") as used_quotes:
         data = json.load(used_quotes)
     return data['used_images']
+
+
+def get_quotes_source():
+    with open('db.json', "r") as used_quotes:
+        data = json.load(used_quotes)
+
+    return data['quotesSource']
+
+
+def get_quotes_routes():
+    with open('db.json', "r") as used_quotes:
+        data = json.load(used_quotes)
+
+    return data['quotesRoutes']

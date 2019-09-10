@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  pythao:
+    image: image-post
+    volumes:
+      - ./:/usr/src/app
+    environment:
+      apiKey: ${apiKey}
+      searchEngineId: ${searchEngineId}
+      facebookId: ${facebookId}
+      facebookSecret: ${facebookSecret}
+      facebookUserToken: ${facebookUserToken}
+      facebookLongLiveToken: ${facebookLongLiveToken}
+      facebookPageToken: ${facebookPageToken}
+      facebookPageId: ${facebookPageId}

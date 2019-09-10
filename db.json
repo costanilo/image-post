@@ -1,4 +1,10 @@
 {
+  "quotesSource": "https://www.pensador.com",
+  "quotesRoutes": [
+    "/populares/",
+    "/populares/2/",
+    "/populares/20/"
+  ],
   "used_images": [
     "https://cps-static.rovicorp.com/3/JPG_400/MI0003/146/MI0003146038.jpg?partner=allrovi.com",
     "https://portugalinews.eu/wp-content/uploads/2019/01/Fernando-Pessoa.jpg",
@@ -20,7 +26,11 @@
     "http://www.newenglandhistoricalsociety.com/wp-content/uploads/2016/05/oliver-wendall-holmes-fb.jpg",
     "https://static01.nyt.com/images/2018/03/28/books/review/28booklispector2/28booklispector2-articleLarge-v2.jpg?quality=75&auto=webp&disable=upscale",
     "https://cdn.pixabay.com/photo/2018/10/22/19/10/nature-3766066_960_720.jpg",
-    "https://cdn.pixabay.com/photo/2017/04/20/21/35/landscape-2247059_960_720.jpg"
+    "https://cdn.pixabay.com/photo/2017/04/20/21/35/landscape-2247059_960_720.jpg",
+    "https://cdn.pensador.com/img/authors/au/gu/augusto-branco-1-l.jpg",
+    "https://www.irishtimes.com/polopoly_fs/1.1861873.1404998287!/image/image.jpg_gen/derivatives/box_620_330/image.jpg",
+    "https://i2.wp.com/ncultura.pt/wp-content/uploads/2019/02/Fernando-Pessoa-aos-20-anos-%C2%A9-DR-CFP-F.jpg?fit=700%2C384&ssl=1",
+    "https://www.onthisday.com/images/people/haile-selassie-i-medium.jpg"
   ],
   "used_quotes": [
     "Dif\u00edcil n\u00e3o \u00e9 lutar por aquilo que se quer, e sim desistir daquilo que se mais ama.\nEu desisti. Mas n\u00e3o pense que foi por n\u00e3o ter coragem de lutar, e sim por n\u00e3o ter mais condi\u00e7\u00f5es de sofrer.",
@@ -42,7 +52,11 @@
     "A mente que se abre a uma nova id\u00e9ia jamais voltar\u00e1 ao seu tamanho original.",
     "Sou como voc\u00ea me v\u00ea.\nPosso ser leve como uma brisa ou forte como uma ventania,\nDepende de quando e como voc\u00ea me v\u00ea passar.",
     "Voc\u00eas riem de mim por eu ser diferente, e eu rio de voc\u00eas por serem todos iguais.",
-    "Aprendi que n\u00e3o posso exigir o amor de ningu\u00e9m...\nPosso apenas dar boas raz\u00f5es para que gostem de mim...\nE ter paci\u00eancia para que a vida fa\u00e7a o resto..."
+    "Aprendi que n\u00e3o posso exigir o amor de ningu\u00e9m...\nPosso apenas dar boas raz\u00f5es para que gostem de mim...\nE ter paci\u00eancia para que a vida fa\u00e7a o resto...",
+    "A maior covardia de um homem \u00e9 despertar o amor de uma mulher sem ter a inten\u00e7\u00e3o de am\u00e1-la.",
+    "Sim, minha for\u00e7a est\u00e1 na solid\u00e3o. N\u00e3o tenho medo nem de chuvas tempestivas nem das grandes ventanias soltas, pois eu tamb\u00e9m sou o escuro da noite.",
+    "\u00c0s vezes ou\u00e7o passar o vento; e s\u00f3 de ouvir o vento passar, vale a pena ter nascido.",
+    "Enquanto a cor da pele for mais importante que o brilho dos olhos, haver\u00e1 guerra."
   ],
   "font_configuration": [
     {
