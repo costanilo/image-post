@@ -36,8 +36,8 @@ def download_image_by_text(text):
     engine_id = get_config_by_key('searchEngineId')
     service = build("customsearch", "v1", developerKey=api_key)
 
-    text = text if text.upper() != 'DESCONHECIDO' else 'Paisagem'
-
+    #text = text if text.upper() != 'DESCONHECIDO' else 'Paisagem'
+    text = 'places wallpaper'
     res = service.cse().list(
         cx=engine_id,
         q=text,

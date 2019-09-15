@@ -1,12 +1,14 @@
 from bs4 import BeautifulSoup
 from shared.proxy_service import get_html_page
-from shared.database_service import get_all_used_quotes, set_new_quote, get_quotes_source, get_quotes_routes
+from shared.database_service import get_all_used_quotes, set_new_quote, get_quotes_routes
 from models.quote_model import Quote
+
+QUOTE_SOURCE = "https://www.pensador.com/"
 
 
 def get_some_quote():
     print("Searching quote...")
-    url = get_quotes_source()
+    url = QUOTE_SOURCE
     selected_quote = Quote()
     not_used_routes = get_quotes_routes()
 

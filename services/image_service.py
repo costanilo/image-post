@@ -62,6 +62,8 @@ def create_image_quote(quote):
     print("Processing Image...")
     crop_image()
     font_config = random.choice(get_font_configurations())
+
+    print("Used Font: {0}".format(font_config['fontName']))
     # font_config = get_font_configurations()[2]
 
     with Image(filename='new-picture.png') as img:
