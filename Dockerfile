@@ -7,10 +7,6 @@ RUN apt-get update && apt-get install -y \
     fontconfig \
     wget
 
-COPY requirements.txt ./
-
-RUN pip install --no-cache-dir -r requirements.txt
-
 ENV OSWALD="https://github.com/google/fonts/raw/master/ofl/oswald/Oswald-Regular.ttf" \
     SOURCE_CODE="https://github.com/google/fonts/raw/master/ofl/sourcecodepro/SourceCodePro-Regular.ttf" \
     DANCING="https://github.com/google/fonts/raw/master/ofl/dancingscript/DancingScript-Regular.ttf" \
@@ -48,4 +44,11 @@ RUN mkdir -p /usr/share/fonts/ \
     && wget -q "${COVERED}" -P /usr/share/fonts
 
 RUN fc-cache -fv
+
+# COPY . .
+
+COPY requirements.txt ./
+
+RUN pip install --no-cache-dir -r requirements.txt
+
 CMD [ "python", "main.py" ]

@@ -1,4 +1,28 @@
 import json
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
+
+
+def create_db_connection():
+    cred = credentials.ApplicationDefault()
+    firebase_admin.initialize_app(cred, {
+        'projectId': 'image-post',
+    })
+
+    return firestore.client()
+
+
+def get_data(collection):
+    db = create_db_connection()
+    users_ref = db.collection(collection)
+    docs = users_ref.stream()
+
+
+def create_data(collection, data):
+    db = create_db_connection()
+    ref = db.collection(collection).document()
+    ref.set(data)
 
 
 def get_all_used_quotes():
